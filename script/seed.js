@@ -10,7 +10,7 @@
  * Now that you've got the main idea, check it out in practice below!
  */
 const db = require('../server/db')
-const {User} = require('../server/db/models')
+const {User,Device} = require('../server/db/models')
 
 async function seed () {
   await db.sync({force: true})
@@ -19,12 +19,31 @@ async function seed () {
   // executed until that promise resolves!
 
   const users = await Promise.all([
-    User.create({email: 'cody@email.com', password: '123'}),
-    User.create({email: 'murphy@email.com', password: '123'})
+    User.create({email: 'reese@reese.com', password: '1', hubAddress: '192.168.234.234'}),
+    User.create({email: 'murphy1@email.com', password: '123',hubAddress: '192.168.235.235'}),
+    User.create({email: 'murphy2@email.com', password: '123',hubAddress: '192.168.236.236'}),
+    User.create({email: 'murphy3@email.com', password: '123',hubAddress: '192.168.237.237'})
+  ])
+
+  const devices = await Promise.all([
+    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 1}),
+    Device.create({type: 'twoPositionLight', name:'Livingroom', position: 'on', userId: 1}),
+    Device.create({type: 'twoPositionLight', name:'Kitchen', position: 'off', userId: 1}),
+    Device.create({type: 'twoPositionLight', name:'Diningroom', position: 'off', userId: 1}),
+    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'on', userId: 2}),
+    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 2}),
+    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 2}),
+    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'on', userId: 3}),
+    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 3}),
+    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 3}),
+    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'on', userId: 4}),
+    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 4}),
   ])
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!
   console.log(`seeded ${users.length} users`)
+  console.log(`seeded ${devices.length} users`)
+
   console.log(`seeded successfully`)
 }
 
