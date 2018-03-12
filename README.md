@@ -7,3 +7,6 @@ The browser is configured as an MQTT client, using iot.eclipse.org for MQTT brok
 Door and fire alarm signals are received via MQTT. The switch control panel sends AJAX requests to an express server running on a raspberry pi which is in turn connected to a 2.4GHz radio talking to relays (controlling various electronics) which themselves talk via 2.4GHz radio.
 
 Front end is deigned with react-redux, HTML and CSS.
+
+!(./demoPhoto.png)
+
