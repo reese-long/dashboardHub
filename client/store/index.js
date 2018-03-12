@@ -4,7 +4,8 @@ import thunkMiddleware from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import user from './user'
 import devices from './devices'
-const reducer = combineReducers({user}, devices)
+import sensorData from './sensorData'
+const reducer = combineReducers({user, devices, sensorData})
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
   createLogger({collapsed: true})

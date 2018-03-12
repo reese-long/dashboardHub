@@ -1,6 +1,20 @@
 body {
-  font-family: sans-serif;
+  background-color: rgb(2, 2, 53);
+  /* font-family: 'Roboto', sans-serif;*/
+  font-family: 'Mina', sans-serif;
+/* font-family: 'Ubuntu', sans-serif; */
+  display: flex;
+  flex-direction: column;
+  width:100vw;
+margin: 0;
+height: 100%;
+padding:3vw;
 }
+nav{
+  margin-right:9vw;
+}
+
+
 
 a {
   text-decoration: none;
@@ -13,9 +27,278 @@ label {
 nav a {
   display: inline-block;
   margin: 1em;
+  color:rgb(238, 212, 63);
+  font-size: 1em;
+padding:1vw;
+border-radius: 1vw;
+transition: all .13s
 }
 
 form div {
   margin: 1em;
   display: inline-block;
+}
+#sendMock{
+  background-color: rgb(2, 2, 53);
+border:none;
+width:5vw;
+}
+#sendMock:focus{
+   outline:0 !important;
+  }
+.navLink.active{
+  font-size: 20pt;
+  background-color:yellow
+}
+a:active {
+  background-color: yellow;
+}
+
+.navLink:hover{
+  background-color: rgba(0, 255, 255,.5);
+}
+.resetFireAlarm{
+  margin:0px;
+  align-self: center;
+  border-radius: .2vw;
+}
+.singleAlarm{
+  box-shadow: 0 0 1vw .13vw rgba(10, 10, 10, 0.337);
+
+  background-color: rgba(48, 107, 233, 0.487);
+  padding:.4vw;
+  border-radius: .6vw;
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+margin:1vw;
+padding:.2vw;
+}
+.doorAlarm{
+  padding:.4vw;
+  margin:1.4vw;
+}
+#doorFlex{
+
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#fireFlex{
+
+  display:flex;
+  padding:2vw;
+  height:100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.react-switch-bg{
+  box-shadow: 0 0 1vw .2vw rgba(31, 31, 30, 0.616);
+
+}
+#dataStreams{
+  justify-content: space-around;
+  display:flex;
+  flex-wrap: wrap;
+  width:100vw;
+  box-shadow: 0 0 3vw .05vw rgba(20, 20, 18, 0.774);
+
+  background-color: rgba(129, 109, 109, 0.494);
+align-items: center;
+border-radius: 2vw;
+margin:1vw;
+padding:1.6vw;
+}
+#switchesFlex{
+  justify-content: center;
+  height:100%;
+  padding:1vw;
+  border-radius: 2vw;
+width:28vw;
+
+
+  display:flex;
+  flex-wrap: wrap
+}
+.singleSwitch{
+  box-shadow: 0 0 1vw .13vw rgba(10, 10, 10, 0.337);
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:center;
+padding:.2vw;
+  width:6vw;
+height:auto;
+background-color: rgba(48, 107, 233, 0.487);
+border-radius: .6vw;
+  margin:1vw;
+}
+
+.doorImg{
+
+  margin:0;
+  width:9.0vw;
+  height:auto;
+  padding:0px;
+}
+
+.fireImg{
+margin: 0px;
+  box-shadow: 0 0 2vw .5vw rgba(18, 176, 28,1);
+  margin-bottom: .7vw;
+  border-radius: 2vw;
+  margin:.7vw;
+  width:8.5vw;
+  height:auto;
+}
+.statusLabel{
+  color:rgb(238, 212, 63)
+
+}
+.statusLabel.minor{
+  color:rgb(238, 212, 63);
+  font-size:8pt;
+
+
+}
+
+#navContainer{
+  align-items: center;
+  width:100vw;
+  display:flex;
+  justify-content: space-between;
+  margin-bottom: 2vw;
+}
+#titleLogo{
+  width:5vw;
+  height:5vw;
+}
+#titleContainer{
+  margin-left: 1vw;
+  margin-right: auto;
+  display:flex;
+  align-items: center;
+}
+.lightBtn{
+  width:4vw;
+  border:none;
+}
+.lightOn{
+  border-top-right-radius: 1vw;
+  border-top-left-radius: 1vw;
+
+  background-color: rgb(66, 202, 84)
+}
+.lightOff{
+  background-color: rgb(202, 66, 84);
+  border-bottom-right-radius: 1vw;
+  border-bottom-left-radius: 1vw;
+}
+#navTitle{
+  margin-right: auto;
+  font-size:25pt;
+  color:rgb(238, 212, 63)
+}
+.sectionHeader{
+  color:rgb(238, 212, 63);
+  font-size: 16pt;
+}
+.chartTitle{
+  color:rgb(238, 212, 63);
+
+}
+#chartFlex{
+  padding-top: 1.6vw;
+  padding:1vw;
+  border-radius: 2vw;
+  flex-direction: column;
+  display: flex;
+  width:auto;
+  overflow: hidden;
+}
+
+#mainContainer{
+  justify-content: center;
+  display:flex;
+  flex-wrap: wrap;
+}
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: rgb(2, 2, 53);
+    font-family: 'Roboto', sans-serif;
+    width:80vw;
+  margin: 0;
+  height: 100%;
+  }
+  #mainContainer{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  #dataStreams{
+    flex-direction: column;
+    display:flex;
+    width:100vw;
+    box-shadow: 0 0 3vw .05vw rgba(20, 20, 18, 0.774);
+
+    background-color: rgba(129, 109, 109, 0.494);
+  align-items: center;
+  border-radius: 2vw;
+  margin:1vw;
+  padding:1.6vw;
+  }
+
+  #switchesFlex{
+    width:80vw;
+    justify-content: center;
+    height:100%;
+    padding:1vw;
+    border-radius: 2vw;
+
+
+    display:flex;
+    flex-wrap: wrap
+  }
+
+  #doorFlex{
+width:80vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #fireFlex{
+    width:80vw;
+
+    display:flex;
+    padding:2vw;
+    height:100%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #chartFlex{
+
+    padding-top: 1.6vw;
+    padding:1vw;
+    border-radius: 2vw;
+    flex-direction: column;
+    display: flex;
+    width:90vw;
+  }
+  .singleSwitch{
+    box-shadow: 0 0 1.8vw .2vw rgba(51, 51, 49, 0.459);
+    display:flex;
+    width:25vw;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+  padding:.2vw;
+  height:auto;
+  background-color: rgba(48, 107, 233, 0.487);
+  border-radius: .6vw;
+    margin:3vw;
+  }
+
 }

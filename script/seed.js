@@ -26,18 +26,31 @@ async function seed () {
   ])
 
   const devices = await Promise.all([
-    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 1}),
-    Device.create({type: 'twoPositionLight', name:'Livingroom', position: 'on', userId: 1}),
-    Device.create({type: 'twoPositionLight', name:'Kitchen', position: 'off', userId: 1}),
-    Device.create({type: 'twoPositionLight', name:'Diningroom', position: 'off', userId: 1}),
-    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'on', userId: 2}),
-    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 2}),
-    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 2}),
-    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'on', userId: 3}),
-    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 3}),
-    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 3}),
-    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'on', userId: 4}),
-    Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 4}),
+    Device.create({type: 'switch', name:'Bedroom', position: 'off', userId: 1}),
+    Device.create({type: 'switch', name:'Living', position: 'on', userId: 1}),
+    Device.create({type: 'switch', name:'Kitchen', position: 'off', userId: 1}),
+    Device.create({type: 'switch', name:'Dining', position: 'off', userId: 1}),
+    Device.create({type: 'switch', name:'Bedroom', position: 'off', userId: 1}),
+    Device.create({type: 'switch', name:'Foyer', position: 'on', userId: 1}),
+    Device.create({type: 'switch', name:'Hallway', position: 'off', userId: 1}),
+    Device.create({type: 'switch', name:'Porch', position: 'off', userId: 1}),
+    Device.create({type: 'switch', name:'Den', position: 'off', userId: 1}),
+    Device.create({type: 'door', name:'Back', position: 'closed', userId: 1}),
+    Device.create({type: 'door', name:'Front', position: 'open', userId: 1}),
+    Device.create({type: 'fire', name:'Bedroom', position: 'safe', userId: 1}),
+    Device.create({type: 'fire', name:'Kitchen', position: 'fire', userId: 1}),
+    Device.create({type: 'tempHum', name:'Apartment', position: null, userId: 1}),
+    Device.create({type: 'tempHum', name:'Apartment', position: null, userId: 1}),
+
+
+    // Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'on', userId: 2}),
+    // Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 2}),
+    // Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 2}),
+    // Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'on', userId: 3}),
+    // Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 3}),
+    // Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 3}),
+    // Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'on', userId: 4}),
+    // Device.create({type: 'twoPositionLight', name:'Bedroom', position: 'off', userId: 4}),
   ])
   // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!

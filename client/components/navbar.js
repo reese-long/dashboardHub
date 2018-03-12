@@ -1,30 +1,34 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import {logout} from '../store'
 
 const Navbar = ({ handleClick, isLoggedIn }) => (
-  <div>
-    <h1>IoT-Dashboard</h1>
+  <div id = 'navContainer'>
+  <div id = 'titleContainer' >
+    <h1 id = 'navTitle' >IoT-Dashboard</h1>
+    <img id = "titleLogo" src = '/slider.png' />
+    </div>
     <nav>
       {isLoggedIn ? (
         <div>
           {/* The navbar will show these links after you log in */}
-          <Link to="/home">Home</Link>
-          <a href="#" onClick={handleClick}>
+          <NavLink activeClassName="active" activeStyle = {{backgroundColor:'white'}}  className = 'navLink' to="/home">Home</NavLink>
+          <a  activeStyle = {{backgroundColor:'White'}}  className = 'navLink' href="#" onClick={handleClick}>
+
             Logout
           </a>
+
         </div>
       ) : (
         <div>
           {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
+          <NavLink activeClassName="active" activeStyle = {{backgroundColor:'white'}} className = 'navLink' to="/login">Login</NavLink>
+          <NavLink activeClassName="active" activeStyle = {{backgroundColor:'white'}}  className = 'navLink' to="/signup">Sign Up</NavLink>
         </div>
       )}
     </nav>
-    <hr />
   </div>
 )
 

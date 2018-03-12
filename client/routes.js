@@ -4,16 +4,20 @@ import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Login, Signup, UserHome} from './components'
 import {me} from './store'
-import {fetchDevicesThunk} from './store/devices'
 
 /**
  * COMPONENT
  */
 class Routes extends Component {
+
+
   componentDidMount () {
     this.props.loadInitialData()
-   // .then(()=>this.props.fetchDevices(this.props.user.id))
+
+
   }
+
+
 
   render () {
     const {isLoggedIn} = this.props
@@ -23,6 +27,7 @@ class Routes extends Component {
         {/* Routes placed here are available to all visitors */}
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+
         {
           isLoggedIn &&
             <Switch>
@@ -53,7 +58,9 @@ const mapDispatch = (dispatch) => {
   return {
     loadInitialData () {
       dispatch(me())
+      return Promise.resolve()
     }
+
   }
 }
 

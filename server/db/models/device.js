@@ -12,6 +12,7 @@ const Device = db.define('device', {
   },
   position: {
     type: Sequelize.STRING,
+    defaultValue:'off'
   }
 })
 
