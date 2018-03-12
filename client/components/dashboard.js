@@ -3,16 +3,13 @@ import { connect } from 'react-redux'
 import NewDevice from './newDeviceInput'
 import { tempData } from './MQTT/connection'
 import Switch from './test'
-//import {HuePicker,AlphaPicker } from 'react-color';
 import ColorPicker from './colorPicker'
 import FireAlarms from './fireAlarms'
 import DoorAlarms from './doorAlarms'
 import Switches from './Switches'
-import {publish} from './MQTT/connection'
-
-
-//import MQTTchart from './MQTTchart'
+import { publish } from './MQTT/connection'
 import Chart from './chart'
+
 const mqtt = require('./MQTT/connection.js')
 
 const tempChartOptions = {
@@ -42,7 +39,6 @@ const tempChartOptions = {
       }]
     }
   }
-
 }
 
 const humChartOptions = {
@@ -75,16 +71,7 @@ const humChartOptions = {
       }
     }]
   }
-
 }
-
-// scales: {
-//   xAxes: [{
-//       type: 'time',
-//       distribution: 'series'
-//   }]
-// }
-
 
 const Dashboard = (props) => {
   const tempChartData = {
@@ -100,9 +87,9 @@ const Dashboard = (props) => {
         highlightStroke: "rgba(220,220,220,.6)",
         xAxisID: 'Temperature'
       },
-
     ]
   }
+
   const humChartData = {
     labels: props.humidityData.timestamps,
     datasets: [
@@ -116,31 +103,28 @@ const Dashboard = (props) => {
         highlightStroke: "rgba(220,220,220,.6)",
         xAxisID: 'Humidity'
       }
-
     ]
   }
-let boolean = false;
+
+  let mockTestBoolean = false;
   return (
 
 
     <div id='mainContainer'>
 
       <br />
-      <button id ="sendMock" onClick  = {()=>{
-        boolean = !boolean
-        if(boolean) {
-          publish("smartsystem/sensors/mockAlarm","1")
-          publish("smartsystem/sensors/mockAlarm","1")
-          publish("smartsystem/sensors/mockAlarm","1")}
+      <button id="sendMock" onClick={() => {
+        mockTestBoolean = !mockTestBoolean
+        if (boolean) {
+          publish("smartsystem/sensors/mockAlarm", "1")
+        }
 
-        else {publish("smartsystem/sensors/mockAlarm","0")
-        publish("smartsystem/sensors/mockAlarm","0")
-        publish("smartsystem/sensors/mockAlarm","0")}
+        else {
+          publish("smartsystem/sensors/mockAlarm", "0")
+        }
 
       }}></button>
       <div id='dataStreams'>
-
-
         <div id='chartFlex' >
           <div className='chartTitle'>Temperature (F)</div>
           <Chart className='chart' data={tempChartData} options={tempChartOptions} />
@@ -148,40 +132,24 @@ let boolean = false;
           <div className='chartTitle'>Humidity (%)</div>
           <Chart className='chart' data={humChartData} options={humChartOptions} />
         </div>
-      <DoorAlarms />
-      <FireAlarms />
-      <Switches />
-
-
-
+        <DoorAlarms />
+        <FireAlarms />
+        <Switches />
       </div>
-
-
     </div>
   )
-
-  /**
-   * CONTAINER
-   */
-
 }
+
 const mapState = state => {
   return {
     devices: state.devices,
     user: state.user,
     temperatureData: state.sensorData.tempHum[0],
     humidityData: state.sensorData.tempHum[1]
-
   }
 }
 
-const mapDispatch = dispatch => {
-  return {
-    handleClick() {
-      dispatch(logout())
-    }
-  }
-}
+const mapDispatch = null
 
 export default connect(mapState, mapDispatch)(Dashboard)
 

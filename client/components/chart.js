@@ -10,6 +10,6 @@ const Chart = (props) => {
 
 }
 
-const mapState = (null)
+const mapState = null
 const mapDispatch = null
 export default connect(mapState, mapDispatch)(Chart)

@@ -3,9 +3,6 @@ import { connect } from 'react-redux'
 import { addDeviceThunk } from '../store/devices'
 import Switch from './test'
 
-/**
- * COMPONENT
- */
 const Switches = (props) => {
 
   return (
@@ -20,21 +17,10 @@ const Switches = (props) => {
           </div>
         ))
     }
-
     </div>
   )
 }
 
-
-
-
-/**
- * CONTAINER
- *   Note that we have two different sets of 'mapStateToProps' functions -
- *   one for Login, and one for Signup. However, they share the same 'mapDispatchToProps'
- *   function, and share the same Component. This is a good example of how we
- *   can stay DRY with interfaces that are very similar to each other!
- */
 const mapState = (state) => {
   return { user: state.user, switches: state.sensorData.switches }
 }
