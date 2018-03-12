@@ -8,5 +8,5 @@ Door and fire alarm signals are received via MQTT. The switch control panel send
 
 Front end is deigned with react-redux, HTML and CSS.
 
-!(./demoPhoto.png)
+![an image of the dashboard](https://raw.githubusercontent.com/reese-long/dashboardHub/development/demoPhoto.png)
 
